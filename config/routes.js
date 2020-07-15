@@ -27,7 +27,7 @@ export default [
           },
           {
             path: '/welcome',
-            name: 'welcome',
+            name: '欢迎页面',
             icon: 'smile',
             component: './Welcome',
           },
@@ -48,7 +48,13 @@ export default [
             ],
           },
           {
-            name: 'list.table-list',
+            path: '/testDemo',
+            name: '测试Icon',
+            icon: 'icon-weixin',
+            component: './iconTest',
+          },
+          {
+            name: '自定义查询表格',
             icon: 'table',
             path: '/list',
             component: './ListTableList',
