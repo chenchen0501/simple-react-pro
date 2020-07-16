@@ -154,4 +154,47 @@ export default {
     });
   },
   'GET  /api/login/captcha': getFakeCaptcha,
+  'GET /api/getRoutes': [
+    {
+      path: '/',
+      redirect: '/welcome',
+    },
+    {
+      path: '/welcome',
+      name: '欢迎页面',
+      icon: '',
+      component: './Welcome',
+    },
+    {
+      path: '/admin',
+      name: '管理员界面',
+      icon: '',
+      component: './Admin',
+      authority: ['admin'],
+      routes: [
+        {
+          path: '/admin/sub-page',
+          name: 'sub-page',
+          icon: 'smile',
+          component: './Welcome',
+          authority: ['admin'],
+        },
+      ],
+    },
+    {
+      path: '/testDemo',
+      name: '微信测试',
+      icon: 'icon-weixin',
+      component: './iconTest',
+    },
+    {
+      name: '自定义查询表格',
+      icon: '',
+      path: '/list',
+      component: './ListTableList',
+    },
+    {
+      component: './404',
+    },
+  ],
 };

@@ -1,9 +1,10 @@
-import { queryCurrent, query as queryUsers } from '@/services/user';
+import { queryCurrent, query as queryUsers, getRoutes } from '@/services/user';
 
 const UserModel = {
   namespace: 'user',
   state: {
     currentUser: {},
+    currentRoutes: [], // 当前权限路由
   },
   effects: {
     *fetch(_, { call, put }) {
@@ -19,6 +20,14 @@ const UserModel = {
       yield put({
         type: 'saveCurrentUser',
         payload: response,
+      });
+    },
+
+    *getRoutes(_, { call, put }) {
+      const res = yield call(getRoutes);
+      yield put({
+        type: 'saveRoutes',
+        payload: res,
       });
     },
   },
@@ -41,6 +50,10 @@ const UserModel = {
           unreadCount: action.payload.unreadCount,
         },
       };
+    },
+
+    saveRoutes(state, action) {
+      return { ...state, currentRoutes: action.payload };
     },
   },
 };

@@ -1,57 +1,8 @@
-# Ant Design Pro
+# 自定义版 Ant Design Pro
 
-This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
+#### 对官网脚手架进行自定义改变，改变如下：
 
-## Environment Prepare
-
-Install `node_modules`:
-
-```bash
-npm install
-```
-
-or
-
-```bash
-yarn
-```
-
-## Provided Scripts
-
-Ant Design Pro provides some useful script to help you quick start and build with web project, code style check and test.
-
-Scripts provided in `package.json`. It's safe to modify or add additional script:
-
-### Start project
-
-```bash
-npm start
-```
-
-### Build project
-
-```bash
-npm run build
-```
-
-### Check code style
-
-```bash
-npm run lint
-```
-
-You can also use script to auto fix some lint error:
-
-```bash
-npm run lint:fix
-```
-
-### Test code
-
-```bash
-npm test
-```
-
-## More
-
-You can view full document on our [official website](https://pro.ant.design). And welcome any feedback in our [github](https://github.com/ant-design/ant-design-pro).
+- 把路由单独提取，放到单独文件
+- 去除业务开发中不需要的地方，如：github 地址，antd 官网图标等
+- 使用 iconfont（阿里矢量库）中的图标，使用范围：路由菜单、业务组件
+- 更改路由权限方式，路由菜单由后端返回，前端不通过 authority 进行权限判断
